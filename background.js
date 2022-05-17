@@ -30,11 +30,11 @@ chrome.action.onClicked.addListener((tab) => {
 function bg_init () {
 	chrome.storage.sync.get("handle", (data) => {
 		handle= typeof(data.handle)=='undefined' ? '' : data.handle;
-		console.log("BG: init. handle: '%o'", handle);
+//		console.log("BG: init. handle: '%o'", handle);
 	});
 }
 
-chrome.runtime.onInstalled.addListener(function() {
+chrome.runtime.onStartup.addListener(function() {
 	bg_init();
 });
 
